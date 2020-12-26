@@ -117,8 +117,8 @@ GEM
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.11.3)
-    minitest-reporters (1.3.8)
+    minitest (5.14.2)
+    minitest-reporters (1.4.2)
       ansi
       builder
       minitest (>= 5.0)
@@ -160,10 +160,10 @@ GEM
       bundler (>= 1.15.0)
       railties (= 6.1.0)
       sprockets-rails (>= 2.0.0)
-    rails-controller-testing (1.0.4)
-      actionpack (>= 5.0.1.x)
-      actionview (>= 5.0.1.x)
-      activesupport (>= 5.0.1.x)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -197,6 +197,10 @@ GEM
       rubyzip (>= 1.2.2)
     semantic_range (2.3.1)
     shellany (0.0.1)
+    spring (2.1.1)
+    spring-watcher-listen (2.0.1)
+      listen (>= 2.7, < 4.0)
+      spring (>= 1.2, < 3.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -242,18 +246,21 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  guard (= 2.16.2)
-  guard-minitest (= 2.4.6)
+  guard
+  guard-minitest
   jbuilder (~> 2.7)
-  minitest (= 5.11.3)
-  minitest-reporters (= 1.3.8)
+  listen
+  minitest
+  minitest-reporters
   pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.0)
-  rails-controller-testing (= 1.0.4)
+  rails-controller-testing
   sass-rails (>= 6)
   selenium-webdriver
+  spring
+  spring-watcher-listen
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data

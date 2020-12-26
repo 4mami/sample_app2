@@ -40,6 +40,10 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
+
+  gem 'listen'
+  gem 'spring'
+  gem 'spring-watcher-listen'
 end
 
 group :test do
@@ -49,11 +53,11 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 
-  gem 'rails-controller-testing', '1.0.4'
-  gem 'minitest',                 '5.11.3'
-  gem 'minitest-reporters',       '1.3.8'
-  gem 'guard',                    '2.16.2'
-  gem 'guard-minitest',           '2.4.6'
+  gem 'rails-controller-testing'
+  gem 'minitest'
+  gem 'minitest-reporters'
+  gem 'guard'
+  gem 'guard-minitest'
 end
 
 group :production do
