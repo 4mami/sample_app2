@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// 冒頭のドット.は、クラスに対してスタイルを適用する
+// 冒頭がポンド記号#で始まる場合は、CSSのidに対してスタイルを適用する
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
 
@@ -143,6 +145,21 @@ input, textarea, select, .uneditable-input {
 
 input {
 height: auto !important;
+}
+
+#error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 0 0 30px 0;
+    }
+}
+  
+.field_with_errors {
+    @extend .has-error;
+    .form-control {
+        color: $state-danger-text;
+    }
 }
 
 /* miscellaneous */
