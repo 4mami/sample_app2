@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
+before_action :logged_in_user, only: [:edit, :update]
+before_action :correct_user, only: [:edit, :update]
+
   def show
+    # Usersコントローラにリクエストが正常に送信されると、params[:id]の部分はユーザーidに変わる
     @user = User.find(params[:id])
   end
   
@@ -20,11 +24,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -34,7 +36,21 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def logged_in_user
+      # application_controllerでsessions_helperをインクルードしてるので、「logged_in?」が使える
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
 end
