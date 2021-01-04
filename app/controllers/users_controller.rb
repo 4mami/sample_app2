@@ -11,6 +11,7 @@ before_action :admin_user, only: :destroy
   def show
     # Usersコントローラにリクエストが正常に送信されると、params[:id]の部分はユーザーidに変わる
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
   
   def new
