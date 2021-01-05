@@ -33,7 +33,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", contact_path
     assert_select "a[href=?]", users_path
     assert_select "a[href=?]", edit_user_path(@user)
-    assert_select "a[href=?]", user_path(@user), count: 3
+    # assert_select "a[href=?]", user_path(@user), count: (3 + @user.microposts.paginate(page: 1).length * 2)
+    assert_select "a[href=?]", user_path(@user), count: (3 + 2 * 30)
     assert_select "a[href=?]", logout_path
   end
 end
