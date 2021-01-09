@@ -4,6 +4,12 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
   </div>
+
+  <button type="button" class="general_button" onclick="document.getElementById('micropost_image').click()">
+    Choose an image
+  </button>
+  <div id="image_name">No image is chosen...</div>
+  
   <%= f.submit "Post", class: "btn btn-primary" %>
   <span class="image">
     <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
@@ -12,10 +18,14 @@
 
 <script type="text/javascript">
   $("#micropost_image").bind("change", function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
+    let chosen_image = this.files[0];
+    if (chosen_image.size/1024/1024 > 5) {
       alert("Maximum file size is 5MB. Please choose a smaller file.");
       $("#micropost_image").val("");
+      document.getElementById('image_name').innerHTML = "No image is chosen...";
+    }
+    else {
+      document.getElementById('image_name').innerHTML = "Chosen image: " + chosen_image.name;
     }
   });
 </script>

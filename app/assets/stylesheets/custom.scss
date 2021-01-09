@@ -5,6 +5,10 @@
 // 冒頭がポンド記号#で始まる場合は、CSSのidに対してスタイルを適用する
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
+$blue-for-button: #337ab7;
+$blue-for-button-border: #2e6da4;
+$dark-blue-for-button: #285f90;
+$dark-blue-for-button-border: #204d74;
 
 @mixin box_sizing {
     -moz-box-sizing:    border-box;
@@ -174,6 +178,29 @@ height: auto !important;
     .form-control {
         color: $state-danger-text;
     }
+}
+
+.general_button{
+    color: white;
+    background-color: $blue-for-button;
+    border: 0.5px solid $blue-for-button-border;
+    border-radius: 3.5px;
+    padding-top: 6.5px; padding-bottom: 6.5px;
+    padding-right: 10px; padding-left: 10px;
+    &:hover {
+        background-color: $dark-blue-for-button;
+        border-color: $dark-blue-for-button-border;
+    }
+}
+
+#image_name {
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-bottom: 9px;
+}
+
+#micropost_image{
+    visibility: hidden;
 }
 
 /* Users index */
