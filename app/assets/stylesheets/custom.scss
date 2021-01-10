@@ -20,7 +20,7 @@ $dark-blue-for-button-border: #204d74;
 body {
     padding-top: 60px;
 }
-  
+
 section {
     overflow: auto;
 }
@@ -36,6 +36,10 @@ textarea {
     }
 }
 
+.bold_emphasis {
+    font-weight: bold;
+}
+
 /* typography */
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
@@ -49,7 +53,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 1.3em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     text-align: center;
