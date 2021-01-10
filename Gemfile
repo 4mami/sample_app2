@@ -66,6 +66,7 @@ group :test do
   gem 'guard'
   gem 'guard-minitest'
   gem 'wdm', '>= 0.1.0', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  gem 'win32console'
 end
 
 group :production do
